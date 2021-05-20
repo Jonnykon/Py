@@ -1,4 +1,4 @@
-#this example shows some usage of try and except to handle errors
+#	Example of try and except to handle errors.
 a, b = 0, 0
 
 try:
@@ -20,31 +20,31 @@ try:
 
         if option == "A":
             try:
-                a = int(input("enter new value for A:"))
+                a = int(input("enter some value for A:"))
             except ValueError:
-                print("that's not an integer")
+                print("that's input is not an integer")
 
         elif option == "B":
             try:
                 a = int(input("enter new value for A:"))
             except ValueError:
-                print("that's not an integer")
+                print("that's not an integer, try again;")
 
         elif option == "S":
-            filename = input("enter file name to save:")
+            filename = input("Please enter file name to save:")
 
             with open(filename, "w") as f:
                 f.write("{}\n{}\n".format(a,b))
 
         elif option == "L":
             try:
-                filename = input("enter file name to load:")
+                filename = input("please enter file name to load:")
 
                 with open(filename, "r") as f:
                     a = int(f.readline())
                     b = int(f.readline())
             except FileNotFoundError as e:
-                print("there is no such file")
+                print("There is no such file")
 
         elif option == "Q":
             break

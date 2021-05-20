@@ -5,38 +5,38 @@
 # read more at: https://docs.python.org/3/library/pickle.html
 import pickle
 
-a,b = 0,0
+A,B = 0,0
 
 FILENAME = "data.pickle"
 
 while 1:
 
     #print("a = {}; b = {}".format(a,b))
-    print("a = %d; b = %d" % (a,b))
+    print("A = %d; B = %d" % (A,B))
 
     print("""
-    set (A)
-    set (B)
-    (S)ave
-    (L)oad
-    (Q)uit
+    set (a)
+    set (b)
+    (s)ave
+    (l)oad
+    (q)uit
     
     """)
 
-    option = input("Option: ").upper()
+    option = input("Option: ").lower()
 
-    if option == "A":
-        a = int(input("enter new value for A:"))
+    if option == "a":
+        A = int(input("enter new value for a:"))
 
-    elif option == "B":
-        b = int(input("enter new value for B:"))
+    elif option == "b":
+        B = int(input("enter new value for b:"))
 
-    elif option == "S":
+    elif option == "s":
         f = open(FILENAME, "wb")
         pickle.dump([a,b], f)
         f.close()
 
-    elif option == "L":
+    elif option == "l":
         f = open(FILENAME, "rb")
         a,b = pickle.load(f)
         f.close()
@@ -45,7 +45,7 @@ while 1:
         a = x[0]
         b =  x[1]
         '''
-    elif option == "Q":
+    elif option == "q":
         break
 
     else:
