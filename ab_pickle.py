@@ -5,7 +5,7 @@
 # read more at: https://docs.python.org/3/library/pickle.html
 import pickle
 
-a,b = 0,0
+a,b = 1,1
 
 FILENAME = "data.pickle"
 
@@ -15,8 +15,8 @@ while 1:
     print("a = %d; b = %d" % (a,b))
 
     print("""
-    set (A)
-    set (B)
+    set (A,a)
+    set (B,a)
     (S)ave
     (L)oad
     (Q)uit
